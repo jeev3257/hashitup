@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Glass morphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Floating animations */
+@keyframes float-0 {
+  0%, 100% { transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg) translateY(0px); }
+  50% { transform: rotateX(45deg) rotateY(45deg) rotateZ(180deg) translateY(-20px); }
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg) translateY(0px); }
+  50% { transform: rotateX(45deg) rotateY(45deg) rotateZ(180deg) translateY(-15px); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg) translateY(0px); }
+  50% { transform: rotateX(45deg) rotateY(45deg) rotateZ(180deg) translateY(-25px); }
+}
+
+/* Blockchain pulse animation */
+@keyframes blockchain-pulse {
+  0%, 100% { 
+    transform: scale(1) translateY(0px);
+    opacity: 0.5;
+  }
+  50% { 
+    transform: scale(1.2) translateY(-5px);
+    opacity: 1;
+  }
+}
+
+/* Network connection animation */  
+@keyframes network-connect {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -20; }
+}
+
+/* Particle drift animation */
+@keyframes drift {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(20px) translateY(-10px); }
+  50% { transform: translateX(-10px) translateY(-20px); }
+  75% { transform: translateX(-20px) translateY(-10px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+/* Falling icon animations */
+@keyframes fall-smooth {
+  0% { 
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { 
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-zigzag {
+  0% { 
+    transform: translateY(-100px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  25% { transform: translateY(25vh) translateX(30px) rotate(90deg); }
+  50% { transform: translateY(50vh) translateX(-30px) rotate(180deg); }
+  75% { transform: translateY(75vh) translateX(30px) rotate(270deg); }
+  90% { opacity: 1; }
+  100% { 
+    transform: translateY(100vh) translateX(0px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-rotate {
+  0% { 
+    transform: translateY(-100px) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% { 
+    opacity: 1; 
+    transform: translateY(-50px) rotate(45deg) scale(1);
+  }
+  90% { 
+    opacity: 1;
+    transform: translateY(calc(100vh - 50px)) rotate(315deg) scale(1);
+  }
+  100% { 
+    transform: translateY(100vh) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
