@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button.jsx";
 import { Card, CardContent } from "./ui/card.jsx";
 import {
@@ -28,8 +28,7 @@ const LandingPage = ({ onNavigate = () => {} }) => {
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const features = [
@@ -76,10 +75,16 @@ const LandingPage = ({ onNavigate = () => {} }) => {
                 left: `${10 + i * 7}%`,
                 top: `${20 + (i % 4) * 20}%`,
                 transform: `
-                  rotateX(45deg) rotateY(45deg) rotateZ(${scrollY * 0.05 + i * 30}deg)
-                  translate3d(${Math.sin(scrollY * 0.005 + i) * 8}px, ${scrollY * (0.01 + i * 0.003)}px, 0)
+                  rotateX(45deg) rotateY(45deg) rotateZ(${
+                    scrollY * 0.05 + i * 30
+                  }deg)
+                  translate3d(${Math.sin(scrollY * 0.005 + i) * 8}px, ${
+                  scrollY * (0.01 + i * 0.003)
+                }px, 0)
                 `,
-                animation: `float-${i % 3} ${8 + (i % 3)}s infinite ease-in-out`,
+                animation: `float-${i % 3} ${
+                  8 + (i % 3)
+                }s infinite ease-in-out`,
                 animationDelay: `${i * 0.3}s`,
                 opacity: 0.25 + (i % 3) * 0.1,
               }}
@@ -100,7 +105,9 @@ const LandingPage = ({ onNavigate = () => {} }) => {
                   scale(${1 + Math.sin(scrollY * 0.01 + i) * 0.2})
                   translate3d(0, ${scrollY * 0.02}px, 0)
                 `,
-                animation: `blockchain-pulse ${3 + (i % 2)}s infinite ease-in-out`,
+                animation: `blockchain-pulse ${
+                  3 + (i % 2)
+                }s infinite ease-in-out`,
                 animationDelay: `${i * 0.25}s`,
                 opacity: 0.5 + (i % 2) * 0.2,
               }}
@@ -118,21 +125,9 @@ const LandingPage = ({ onNavigate = () => {} }) => {
               x2="100%"
               y2="100%"
             >
-              <stop
-                offset="0%"
-                stopColor="#10B981"
-                stopOpacity="0.8"
-              />
-              <stop
-                offset="50%"
-                stopColor="#3B82F6"
-                stopOpacity="0.6"
-              />
-              <stop
-                offset="100%"
-                stopColor="#10B981"
-                stopOpacity="0.2"
-              />
+              <stop offset="0%" stopColor="#10B981" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#10B981" stopOpacity="0.2" />
             </linearGradient>
           </defs>
           {[...Array(8)].map((_, i) => (
@@ -163,7 +158,9 @@ const LandingPage = ({ onNavigate = () => {} }) => {
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                transform: `translate3d(0, ${scrollY * (0.03 + i * 0.001)}px, 0)`,
+                transform: `translate3d(0, ${
+                  scrollY * (0.03 + i * 0.001)
+                }px, 0)`,
                 animation: `drift ${12 + (i % 6)}s infinite linear`,
                 animationDelay: `${i * 0.4}s`,
                 opacity: 0.3 + (i % 3) * 0.1,
@@ -174,28 +171,21 @@ const LandingPage = ({ onNavigate = () => {} }) => {
 
         {/* Falling Blockchain Icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[
-            Coins,
-            Link,
-            Zap,
-            Database,
-            Globe,
-            Lock,
-            Blocks,
-            Network,
-          ].map((Icon, i) => (
-            <Icon
-              key={`falling-icon-${i}`}
-              className="absolute text-emerald-400/40 will-change-transform"
-              style={{
-                left: `${8 + i * 11}%`,
-                width: `${20 + (i % 3) * 4}px`,
-                height: `${20 + (i % 3) * 4}px`,
-                animation: `fall-smooth ${15 + (i % 4) * 3}s infinite linear`,
-                animationDelay: `${i * 2}s`,
-              }}
-            />
-          ))}
+          {[Coins, Link, Zap, Database, Globe, Lock, Blocks, Network].map(
+            (Icon, i) => (
+              <Icon
+                key={`falling-icon-${i}`}
+                className="absolute text-emerald-400/40 will-change-transform"
+                style={{
+                  left: `${8 + i * 11}%`,
+                  width: `${20 + (i % 3) * 4}px`,
+                  height: `${20 + (i % 3) * 4}px`,
+                  animation: `fall-smooth ${15 + (i % 4) * 3}s infinite linear`,
+                  animationDelay: `${i * 2}s`,
+                }}
+              />
+            )
+          )}
 
           {/* Second layer with zigzag motion */}
           {[Binary, Hash, Key, Server].map((Icon, i) => (
@@ -234,9 +224,7 @@ const LandingPage = ({ onNavigate = () => {} }) => {
         <div className="max-w-7xl mx-auto flex items-center justify-between p-6">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-400/25">
-              <span className="text-white text-lg font-bold">
-                E
-              </span>
+              <span className="text-white text-lg font-bold">E</span>
             </div>
             <span className="text-2xl font-semibold tracking-tight">
               EcoChain
@@ -280,9 +268,16 @@ const LandingPage = ({ onNavigate = () => {} }) => {
             <Button
               variant="ghost"
               className="text-gray-300 hover:text-white hover:bg-white/10 border-0"
+              onClick={() => onNavigate("admin-login")}
+            >
+              Admin
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-gray-300 hover:text-white hover:bg-white/10 border-0"
               onClick={() => onNavigate("login")}
             >
-              Login
+              Company Login
             </Button>
             <Button
               className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 shadow-lg shadow-emerald-600/25"
@@ -307,19 +302,18 @@ const LandingPage = ({ onNavigate = () => {} }) => {
           </h1>
 
           <p className="text-lg md:text-xl lg:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            EcoChain leverages cutting-edge technologies to
-            streamline carbon credit management, ensuring
-            transparency and efficiency in environmental
-            sustainability.
+            EcoChain leverages cutting-edge technologies to streamline carbon
+            credit management, ensuring transparency and efficiency in
+            environmental sustainability.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center items-center">
             <Button
               size="lg"
               className="bg-emerald-600 hover:bg-emerald-700 text-white text-base lg:text-lg px-8 lg:px-12 py-3 lg:py-4 h-12 lg:h-14 font-medium shadow-xl shadow-emerald-600/25 rounded-xl w-full sm:w-auto"
-              onClick={() => onNavigate("dashboard")}
+              onClick={() => onNavigate("login")}
             >
-              Get Started
+              Company Dashboard
             </Button>
             <Button
               size="lg"
@@ -341,8 +335,8 @@ const LandingPage = ({ onNavigate = () => {} }) => {
               Key Features
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light">
-              Discover how our advanced technology stack
-              revolutionizes carbon credit management
+              Discover how our advanced technology stack revolutionizes carbon
+              credit management
             </p>
           </div>
 
@@ -375,16 +369,10 @@ const LandingPage = ({ onNavigate = () => {} }) => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-6 md:mb-0">
               <div className="w-8 h-8 bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-xl flex items-center justify-center">
-                <span className="text-white text-lg font-bold">
-                  E
-                </span>
+                <span className="text-white text-lg font-bold">E</span>
               </div>
-              <span className="text-xl font-semibold">
-                EcoChain
-              </span>
-              <span className="text-gray-400">
-                © 2024 All rights reserved.
-              </span>
+              <span className="text-xl font-semibold">EcoChain</span>
+              <span className="text-gray-400">© 2024 All rights reserved.</span>
             </div>
 
             <div className="flex space-x-8">
